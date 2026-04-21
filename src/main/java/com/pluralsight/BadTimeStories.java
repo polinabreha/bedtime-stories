@@ -8,8 +8,6 @@ public class BadTimeStories {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-
-
         String goldiLocks = "src/main/resources/goldilocks.txt";
         String hansel = "src/main/resources/hansel_and_gretel.txt";
         String mary = "src/main/resources/mary_had_a_little_lamb.txt";
