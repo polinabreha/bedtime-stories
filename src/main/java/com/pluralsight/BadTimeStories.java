@@ -7,8 +7,20 @@ public class BadTimeStories {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("-----BadTimeStories-----");
-        System.out.print("""
+
+
+        String goldiLocks = "src/main/resources/goldilocks.txt";
+        String hansel = "src/main/resources/hansel_and_gretel.txt";
+        String mary = "src/main/resources/mary_had_a_little_lamb.txt";
+
+        boolean run = true;
+
+
+
+        while (run) {
+
+            System.out.println("-----BadTimeStories-----");
+            System.out.print("""
                 Please choose the story :\
                 
                 1. Goldilocks\
@@ -20,18 +32,11 @@ public class BadTimeStories {
                 4. Finish the program ( enter 0 )\
                 
                  Enter the number(1-3) :\s""");
-        int storyNumber = scanner.nextInt();
-        scanner.nextLine();
-
-        String goldiLocks = "src/main/resources/goldilocks.txt";
-        String hansel = "src/main/resources/hansel_and_gretel.txt";
-        String mary = "src/main/resources/mary_had_a_little_lamb.txt";
-
-        boolean run = true;
+            int storyNumber = scanner.nextInt();
+            scanner.nextLine();
 
 
 
-        while (run) {
             if (storyNumber == 1) {
                 FileReader fileReader = new FileReader(goldiLocks);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -40,6 +45,7 @@ public class BadTimeStories {
                 while ((input = bufferedReader.readLine()) != null) {
                     System.out.println(input);
                 }
+                bufferedReader.close();
             }else if (storyNumber == 2) {
                 FileReader fileReader = new FileReader(hansel);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -48,6 +54,7 @@ public class BadTimeStories {
                 while ((input = bufferedReader.readLine()) != null) {
                     System.out.println(input);
                 }
+                bufferedReader.close();
             }else if (storyNumber == 3) {
                 FileReader fileReader = new FileReader(mary);
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -56,7 +63,9 @@ public class BadTimeStories {
                 while ((input = bufferedReader.readLine()) != null) {
                     System.out.println(input);
                 }
+                bufferedReader.close();
             }else if (storyNumber == 0) {
+                System.out.println("----Bye see you again----");
                 run = false;
             }
 
